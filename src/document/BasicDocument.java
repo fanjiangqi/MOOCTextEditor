@@ -1,5 +1,6 @@
 package document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** 
@@ -34,9 +35,12 @@ public class BasicDocument extends Document
 	@Override
 	public int getNumWords()
 	{
-		//TODO: Implement this method in week 2 according to the comments above.  
+		//TODO: Implement this method in week 2 according to the comments above.
 		// See the Module 2 support videos if you need help.
-	    return 0;
+		String reguExp = "[a-z]+[A-Z]*|[A-Z]+[a-z]*";
+		List<String> list = super.getTokens(reguExp);
+
+	    return list.size();
 	}
 	
 	/**
@@ -56,7 +60,9 @@ public class BasicDocument extends Document
 	{
 	    //TODO: Implement this method.  See the Module 2 support videos 
         // if you need help.
-        return 0;
+		String reguExp = "[a-zA-Z0-9]+.|[a-zA-Z0-9]+!|[a-zA-Z0-9]+?";
+		List<String> list = super.getTokens(reguExp);
+        return list.size();
 	}
 	
 	/**
